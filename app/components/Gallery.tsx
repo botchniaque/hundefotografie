@@ -10,12 +10,12 @@ interface GalleryImage {
 }
 
 const GALLERY_IMAGES: GalleryImage[] = [
-  { id: 1, src: "/gallery/1.jpg", alt: "Dog portrait 1" },
-  { id: 2, src: "/gallery/2.jpg", alt: "Dog portrait 2" },
-  { id: 3, src: "/gallery/3.jpg", alt: "Dog portrait 3" },
-  { id: 4, src: "/gallery/4.jpg", alt: "Dog portrait 4" },
-  { id: 5, src: "/gallery/5.jpg", alt: "Dog portrait 5" },
-  { id: 6, src: "/gallery/6.jpg", alt: "Dog portrait 6" },
+  { id: 1, src: "/gallery/1.jpeg", alt: "Dog portrait 1" },
+  { id: 2, src: "/gallery/2.jpeg", alt: "Dog portrait 2" },
+  { id: 3, src: "/gallery/3.jpeg", alt: "Dog portrait 3" },
+  { id: 4, src: "/gallery/4.jpeg", alt: "Dog portrait 4" },
+  { id: 5, src: "/gallery/5.jpeg", alt: "Dog portrait 5" },
+  { id: 6, src: "/gallery/6.jpeg", alt: "Dog portrait 6" },
 ];
 
 export default function Gallery() {
@@ -34,11 +34,15 @@ export default function Gallery() {
             <button
               key={image.id}
               onClick={() => setSelectedId(image.id)}
-              className="relative aspect-square bg-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition cursor-pointer group"
+              className="relative aspect-square rounded-lg overflow-hidden hover:shadow-lg transition cursor-pointer group"
             >
-              <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                <span className="text-gray-600 text-lg">Image {image.id}</span>
-              </div>
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition" />
             </button>
           ))}
@@ -53,9 +57,12 @@ export default function Gallery() {
               className="relative max-w-2xl w-full aspect-square bg-white rounded-lg overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                <span className="text-gray-600 text-xl">Image {selected.id}</span>
-              </div>
+              <Image
+                src={selected.src}
+                alt={selected.alt}
+                fill
+                className="w-full h-full object-cover"
+              />
               <button
                 onClick={() => setSelectedId(null)}
                 className="absolute top-4 right-4 bg-white rounded-full p-2 hover:bg-gray-100"
