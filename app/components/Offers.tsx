@@ -18,7 +18,7 @@ export default function Offers() {
               An intimate session dedicated to capturing your pet's distinctive character and spirit. Includes professional direction and 3 hand-selected, expertly edited photographs.
             </p>
             <div className="border-t border-gray-300 pt-8 mb-10">
-              <span className="text-5xl font-light text-gray-900">€150</span>
+              <span className="text-3xl font-light text-gray-900">€150</span>
               <p className="text-gray-500 text-xs mt-3 font-light">3 Premium Photographs Included</p>
             </div>
             <a
