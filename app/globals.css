@@ -11,3 +11,20 @@
 html {
   scroll-behavior: smooth;
 }
+
+body {
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  background-color: #f9f7f3;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif), serif;
+}
+
+.bg-cream {
+  background-color: #f9f7f3;
+}
+
+.text-amber-50 {
+  color: #fffbf0;
+}

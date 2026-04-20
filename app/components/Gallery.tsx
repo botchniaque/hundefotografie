@@ -24,17 +24,35 @@ export default function Gallery() {
   const selected = GALLERY_IMAGES.find((img) => img.id === selectedId);
 
   return (
-    <section id="gallery" className="py-20 bg-white">
+    <section id="gallery" className="py-24 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">Gallery</h2>
-        <p className="text-gray-600 mb-12">Check out some of my recent work</p>
+        <div className="mb-16">
+          <h2 className="text-5xl font-serif font-bold text-gray-900 mb-4">Gallery</h2>
+          <p className="text-gray-600 font-light text-lg">Celebrating the beauty of our furry companions</p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {GALLERY_IMAGES.map((image) => (
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 auto-rows-max">
+          {/* Large featured image */}
+          <button
+            onClick={() => setSelectedId(GALLERY_IMAGES[0].id)}
+            className="col-span-2 md:col-span-2 md:row-span-2 relative overflow-hidden hover:opacity-90 transition cursor-pointer group"
+          >
+            <Image
+              src={GALLERY_IMAGES[0].src}
+              alt={GALLERY_IMAGES[0].alt}
+              fill
+              className="w-full h-full object-cover"
+              loading="eager"
+            />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition" />
+          </button>
+
+          {/* Right column - smaller images */}
+          {GALLERY_IMAGES.slice(1, 6).map((image, idx) => (
             <button
               key={image.id}
               onClick={() => setSelectedId(image.id)}
-              className="relative aspect-square rounded-lg overflow-hidden hover:shadow-lg transition cursor-pointer group"
+              className="relative aspect-square overflow-hidden hover:opacity-90 transition cursor-pointer group"
             >
               <Image
                 src={image.src}
@@ -43,7 +61,7 @@ export default function Gallery() {
                 className="w-full h-full object-cover"
                 loading="eager"
               />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition" />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition" />
             </button>
           ))}
         </div>
