@@ -16,7 +16,7 @@ export default function Offers() {
               <p className="text-gray-600 text-sm">including 3 photos</p>
             </div>
             <a
-              href="https://instagram.com/hundephotographberlin"
+              href="https://instagram.com/hundefotografberlin"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full bg-blue-600 text-white text-center py-2 rounded-lg font-semibold hover:bg-blue-700 transition"
@@ -35,7 +35,7 @@ export default function Offers() {
               <p className="text-gray-600 text-sm">including 5 photos</p>
             </div>
             <a
-              href="https://instagram.com/hundephotographberlin"
+              href="https://instagram.com/hundefotografberlin"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full bg-pink-600 text-white text-center py-2 rounded-lg font-semibold hover:bg-pink-700 transition"
@@ -54,7 +54,7 @@ export default function Offers() {
               <p className="text-gray-600 text-sm">tailored to your needs</p>
             </div>
             <a
-              href="https://instagram.com/hundephotographberlin"
+              href="https://instagram.com/hundefotografberlin"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full bg-purple-600 text-white text-center py-2 rounded-lg font-semibold hover:bg-purple-700 transition"
